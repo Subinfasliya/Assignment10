@@ -1,6 +1,12 @@
 import { FaStar } from "react-icons/fa";
 
 const ProductCard = ({product}) => {
+
+
+  const cartHandler = (productName) =>{
+       console.log(productName);  
+  }
+  
   return (
     <>
       {/* Product Card */}
@@ -8,7 +14,7 @@ const ProductCard = ({product}) => {
         <img
           src={product.image}
           alt="Product image"
-          className="w-full h-70 object-cover "
+          className="w-full h-70 object-contain"
         />
         {/* Product card body */}
         <div className="p-4">
@@ -18,6 +24,7 @@ const ProductCard = ({product}) => {
           <p className="flex items-center gap-1">
             Rating : {product.rating} <FaStar color="red" />
           </p>
+          <button className="text-white bg-sky-500/100 mt-2 p-2 rounded cursor-pointer" onClick={()=> cartHandler(product.name)}>Add To Cart</button>
         </div>
       </div>
     </>
